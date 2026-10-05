@@ -1,0 +1,348 @@
+{
+  "stage": "2/2 curation",
+  "generated_utc": "2026-08-22T01:40:20+00:00",
+  "recipe_version": "1.0.0",
+  "recipe_hash": "fde644e297e43f29c2dbf240b7f81431dbb94f46c5f614176255a2d9f6e5a7b6",
+  "raw_root": "Aplikasi/data/raw",
+  "curated_root": "data/curated",
+  "sources": {
+    "dfire": {
+      "source": "dfire",
+      "n_candidates": 43054,
+      "n_written": 43054,
+      "n_already_present": 0,
+      "n_excluded_not_allowed": 0,
+      "n_rgb_resized": 873,
+      "n_rgb_kept_size": 20654,
+      "n_thermal_converted": 0,
+      "n_verbatim": 21527,
+      "bytes_in": 3118334084,
+      "bytes_out": 3049662869,
+      "resolution_before": {
+        "1280x720": 9167,
+        "640x360": 4132,
+        "480x360": 748,
+        "640x352": 688,
+        "1920x1080": 276,
+        "540x360": 258,
+        "768x432": 137,
+        "800x450": 131,
+        "640x480": 126,
+        "1024x768": 113,
+        "198x360": 113,
+        "720x576": 86
+      },
+      "resolution_after": {
+        "1280x720": 9509,
+        "640x360": 4132,
+        "480x360": 748,
+        "640x352": 688,
+        "540x360": 258,
+        "768x432": 137,
+        "800x450": 131,
+        "640x480": 126,
+        "1024x768": 113,
+        "198x360": 113,
+        "1280x960": 104,
+        "720x576": 86
+      },
+      "thermal_celsius_range": [],
+      "thermal_verification": {},
+      "errors": [],
+      "size_in_gb": 2.904,
+      "size_out_gb": 2.84,
+      "size_reduction_pct": 2.2
+    },
+    "wildfire": {
+      "source": "wildfire",
+      "n_candidates": 2699,
+      "n_written": 2699,
+      "n_already_present": 0,
+      "n_excluded_not_allowed": 0,
+      "n_rgb_resized": 2477,
+      "n_rgb_kept_size": 222,
+      "n_thermal_converted": 0,
+      "n_verbatim": 0,
+      "bytes_in": 10739687625,
+      "bytes_out": 764991223,
+      "resolution_before": {
+        "6000x4000": 119,
+        "4032x3024": 102,
+        "5472x3648": 87,
+        "3992x2992": 59,
+        "4000x3000": 54,
+        "4000x2250": 50,
+        "5464x3640": 42,
+        "3264x2448": 38,
+        "5184x3456": 37,
+        "4000x6000": 37,
+        "4608x2592": 32,
+        "4272x2848": 31
+      },
+      "resolution_after": {
+        "1280x853": 626,
+        "1280x960": 390,
+        "1280x720": 248,
+        "853x1280": 206,
+        "960x1280": 96,
+        "1280x959": 90,
+        "1280x854": 85,
+        "1280x719": 74,
+        "1024x1280": 50,
+        "720x1280": 39,
+        "1280x855": 26,
+        "959x1280": 25
+      },
+      "thermal_celsius_range": [],
+      "thermal_verification": {},
+      "errors": [],
+      "size_in_gb": 10.002,
+      "size_out_gb": 0.712,
+      "size_reduction_pct": 92.9
+    },
+    "flame3": {
+      "source": "flame3",
+      "n_candidates": 2172,
+      "n_written": 2172,
+      "n_already_present": 0,
+      "n_excluded_not_allowed": 1617,
+      "n_rgb_resized": 1353,
+      "n_rgb_kept_size": 0,
+      "n_thermal_converted": 819,
+      "n_verbatim": 0,
+      "bytes_in": 31961636135,
+      "bytes_out": 902463836,
+      "resolution_before": {
+        "640x512": 819,
+        "8000x6000": 818,
+        "7680x4320": 535
+      },
+      "resolution_after": {
+        "640x512": 819,
+        "1280x960": 818,
+        "1280x720": 535
+      },
+      "thermal_celsius_range": [
+        2.149993896484375,
+        607.449951171875
+      ],
+      "thermal_verification": {
+        "n_compared": 22,
+        "pairs": [
+          {
+            "frame": "IRX_0529",
+            "converted_max_c": 198.85,
+            "geo_max_c": 197.0,
+            "converted_median_c": 31.65,
+            "geo_median_c": 29.8,
+            "max_delta_c": 1.85,
+            "median_delta_c": 1.85
+          },
+          {
+            "frame": "IRX_0530",
+            "converted_max_c": 198.85,
+            "geo_max_c": 197.0,
+            "converted_median_c": 31.45,
+            "geo_median_c": 29.6,
+            "max_delta_c": 1.85,
+            "median_delta_c": 1.85
+          },
+          {
+            "frame": "IRX_0531",
+            "converted_max_c": 198.85,
+            "geo_max_c": 197.0,
+            "converted_median_c": 31.15,
+            "geo_median_c": 29.3,
+            "max_delta_c": 1.85,
+            "median_delta_c": 1.85
+          },
+          {
+            "frame": "IRX_0532",
+            "converted_max_c": 198.85,
+            "geo_max_c": 197.0,
+            "converted_median_c": 31.05,
+            "geo_median_c": 29.2,
+            "max_delta_c": 1.85,
+            "median_delta_c": 1.85
+          },
+          {
+            "frame": "IRX_0533",
+            "converted_max_c": 198.85,
+            "geo_max_c": 197.0,
+            "converted_median_c": 30.45,
+            "geo_median_c": 28.6,
+            "max_delta_c": 1.85,
+            "median_delta_c": 1.85
+          },
+          {
+            "frame": "IRX_0534",
+            "converted_max_c": 198.85,
+            "geo_max_c": 197.0,
+            "converted_median_c": 30.35,
+            "geo_median_c": 28.4,
+            "max_delta_c": 1.85,
+            "median_delta_c": 1.95
+          },
+          {
+            "frame": "IRX_0535",
+            "converted_max_c": 198.85,
+            "geo_max_c": 197.0,
+            "converted_median_c": 30.15,
+            "geo_median_c": 28.3,
+            "max_delta_c": 1.85,
+            "median_delta_c": 1.85
+          },
+          {
+            "frame": "IRX_0536",
+            "converted_max_c": 198.85,
+            "geo_max_c": 197.0,
+            "converted_median_c": 29.95,
+            "geo_median_c": 28.1,
+            "max_delta_c": 1.85,
+            "median_delta_c": 1.85
+          },
+          {
+            "frame": "IRX_0537",
+            "converted_max_c": 198.85,
+            "geo_max_c": 197.0,
+            "converted_median_c": 29.85,
+            "geo_median_c": 28.0,
+            "max_delta_c": 1.85,
+            "median_delta_c": 1.85
+          },
+          {
+            "frame": "IRX_0538",
+            "converted_max_c": 198.85,
+            "geo_max_c": 197.0,
+            "converted_median_c": 29.65,
+            "geo_median_c": 27.8,
+            "max_delta_c": 1.85,
+            "median_delta_c": 1.85
+          },
+          {
+            "frame": "IRX_0539",
+            "converted_max_c": 198.85,
+            "geo_max_c": 197.0,
+            "converted_median_c": 31.15,
+            "geo_median_c": 29.3,
+            "max_delta_c": 1.85,
+            "median_delta_c": 1.85
+          },
+          {
+            "frame": "IRX_0826",
+            "converted_max_c": 46.45,
+            "geo_max_c": 35.9,
+            "converted_median_c": 31.35,
+            "geo_median_c": 29.4,
+            "max_delta_c": 10.55,
+            "median_delta_c": 1.95
+          },
+          {
+            "frame": "IRX_0827",
+            "converted_max_c": 46.45,
+            "geo_max_c": 36.6,
+            "converted_median_c": 31.35,
+            "geo_median_c": 29.3,
+            "max_delta_c": 9.85,
+            "median_delta_c": 2.05
+          },
+          {
+            "frame": "IRX_0828",
+            "converted_max_c": 46.85,
+            "geo_max_c": 37.6,
+            "converted_median_c": 30.85,
+            "geo_median_c": 29.1,
+            "max_delta_c": 9.25,
+            "median_delta_c": 1.75
+          },
+          {
+            "frame": "IRX_0829",
+            "converted_max_c": 46.85,
+            "geo_max_c": 35.1,
+            "converted_median_c": 30.85,
+            "geo_median_c": 29.0,
+            "max_delta_c": 11.75,
+            "median_delta_c": 1.85
+          },
+          {
+            "frame": "IRX_0830",
+            "converted_max_c": 46.45,
+            "geo_max_c": 37.5,
+            "converted_median_c": 30.85,
+            "geo_median_c": 29.0,
+            "max_delta_c": 8.95,
+            "median_delta_c": 1.85
+          },
+          {
+            "frame": "IRX_0831",
+            "converted_max_c": 46.45,
+            "geo_max_c": 41.0,
+            "converted_median_c": 30.85,
+            "geo_median_c": 28.8,
+            "max_delta_c": 5.45,
+            "median_delta_c": 2.05
+          },
+          {
+            "frame": "IRX_0832",
+            "converted_max_c": 46.45,
+            "geo_max_c": 40.8,
+            "converted_median_c": 30.45,
+            "geo_median_c": 28.6,
+            "max_delta_c": 5.65,
+            "median_delta_c": 1.85
+          },
+          {
+            "frame": "IRX_0833",
+            "converted_max_c": 46.85,
+            "geo_max_c": 41.8,
+            "converted_median_c": 30.45,
+            "geo_median_c": 28.6,
+            "max_delta_c": 5.05,
+            "median_delta_c": 1.85
+          },
+          {
+            "frame": "IRX_0834",
+            "converted_max_c": 46.85,
+            "geo_max_c": 38.7,
+            "converted_median_c": 30.45,
+            "geo_median_c": 28.4,
+            "max_delta_c": 8.15,
+            "median_delta_c": 2.05
+          },
+          {
+            "frame": "IRX_0835",
+            "converted_max_c": 45.75,
+            "geo_max_c": 39.8,
+            "converted_median_c": 31.75,
+            "geo_median_c": 29.7,
+            "max_delta_c": 5.95,
+            "median_delta_c": 2.05
+          },
+          {
+            "frame": "IRX_0836",
+            "converted_max_c": 46.15,
+            "geo_max_c": 36.2,
+            "converted_median_c": 31.35,
+            "geo_median_c": 29.5,
+            "max_delta_c": 9.95,
+            "median_delta_c": 1.85
+          }
+        ],
+        "verdict": "CONFIRMED",
+        "mean_abs_max_delta_c": 5.04,
+        "mean_abs_median_delta_c": 1.89,
+        "interpretation": "Converted values agree with the release's own Celsius product to within the error expected from orthorectification. A wrong unit assumption would be out by tens to hundreds of degrees."
+      },
+      "errors": [],
+      "size_in_gb": 29.767,
+      "size_out_gb": 0.84,
+      "size_reduction_pct": 97.2
+    }
+  },
+  "environment": {
+    "captured_utc": "2026-08-22T01:40:22+00:00",
+    "python_version": "3.11.15",
+    "platform": "Linux-6.17.0-29-generic-x86_64-with-glibc2.39",
+    "hostname": "fadhli"
+  }
+}

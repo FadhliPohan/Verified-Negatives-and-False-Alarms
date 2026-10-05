@@ -1,0 +1,8 @@
+# Optional: training appendix of the notebook (RUN_TRAINING / RUN_SMOKE_TEST).
+# The original runs used the versions in comments, with CUDA 12.4 on an RTX 4050 Laptop GPU.
+-r requirements.txt
+torch>=2.5          # 2.5.1+cu124 for training; the CPU smoke test was run with 2.13.0
+torchvision>=0.20   # 0.20.1+cu124
+timm>=1.0           # 1.0.28; provides the exact ImageNet-pretrained ResNet-18 backbone
+ultralytics==8.4.124
+opencv-python-headless>=4.8

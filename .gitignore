@@ -1,0 +1,13 @@
+# Outputs written by the notebook (tables, figures) and local data
+outputs/
+
+# Stored predictions are downloaded separately (see README.md); keep only the folder's README
+data/predictions/*
+!data/predictions/README.md
+
+# Python and Jupyter
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+*_executed.ipynb

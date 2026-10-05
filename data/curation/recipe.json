@@ -1,0 +1,75 @@
+{
+  "recipe": {
+    "version": "1.0.0",
+    "rationale": {
+      "rgb_downscale": "The locked training input is 640 px (ADR-001). FLAME 3 ships 8000x6000 visible frames at ~20 MB each; decoding those per sample makes the dataloader, not the GPU, the bottleneck. Capping the long side at 1280 keeps 2x headroom for the +/-0.3 scale augmentation and the SSL random-resized crop while cutting the RGB payload by more than an order of magnitude. Bounding boxes are unaffected because D-Fire stores them in normalised YOLO coordinates.",
+      "thermal_never_resampled": "Resampling or lossily re-encoding a radiometric raster destroys the measurement that makes the thermal source scientifically interesting. Thermal frames keep their original grid and are written as lossless float32.",
+      "thermal_to_celsius": "Storing Celsius makes the curated dataset self-describing and lets thermal normalisation use physically motivated limits instead of blind percentiles (manuscript section 3.6.2). The conversion is an exactly invertible affine map.",
+      "one_representation_per_frame": "FLAME 3 provides each thermal frame as raw counts, an orthorectified Celsius product, a rendered colour map, and a FLIR container. Only the raw counts are ingested: the colour map carries no radiometric information, the orthorectified product is a resampled derivative, and ingesting several would multiply the source and mix incompatible semantics.",
+      "allow_list": "Inclusion is an allow-list of directory globs rather than a deny-list, so a subdirectory added by a future dataset release cannot be ingested without a deliberate recipe change."
+    },
+    "sources": {
+      "dfire": {
+        "name": "dfire",
+        "include_globs": [
+          "train/images/*",
+          "test/images/*"
+        ],
+        "exclude_reasons": {},
+        "rgb_max_long_side": 1280,
+        "rgb_jpeg_quality": 92,
+        "thermal_conversion": null,
+        "verbatim_ext": [
+          ".txt"
+        ],
+        "layout": "preserve",
+        "notes": "Layout already matches the adapter. Label .txt files are copied byte-for-byte, including the zero-byte files that mean 'annotated, and there is nothing here'."
+      },
+      "wildfire": {
+        "name": "wildfire",
+        "include_globs": [
+          "train/*/*",
+          "val/*/*",
+          "test/*/*"
+        ],
+        "exclude_reasons": {},
+        "rgb_max_long_side": 1280,
+        "rgb_jpeg_quality": 92,
+        "thermal_conversion": null,
+        "verbatim_ext": [],
+        "layout": "preserve",
+        "notes": "The v2 release has no sub-taxonomy folders under fire/ and nofire/, so the smoke-only exclusion of rule D2 caveat 2 cannot be applied. Recorded as a limitation rather than worked around."
+      },
+      "flame3": {
+        "name": "flame3",
+        "include_globs": [
+          "Hanna Hammock/plot */*/raw_thermal_tiff/*",
+          "Hanna Hammock/plot */*/raw_rgb_jpg/*",
+          "Hanna Hammock/plot */raw_jpg_rgb/*"
+        ],
+        "exclude_reasons": {
+          "geo_thermal_tiff_celsius": "orthorectified derivative of raw_thermal_tiff; resampled, and its 0.00 minimum is a nodata border rather than 0 C, which would drag the normalisation percentiles to zero",
+          "raw_thermal_jpg": "rendered colour map; carries no radiometric information and would duplicate every thermal frame",
+          "raw_thermal_irg": "FLIR proprietary container; unreadable by any imaging library",
+          "GCPs": "ground-control points, GIS vector data rather than imagery",
+          "metadata": "a weather screenshot and a brief map, not observations",
+          "*_ortho.tif / *_dtm.tif / *_pointcloud.las": "photogrammetry products, hundreds of MB each, not per-frame imagery"
+        },
+        "rgb_max_long_side": 1280,
+        "rgb_jpeg_quality": 92,
+        "thermal_conversion": {
+          "unit": "deci_kelvin",
+          "divisor": 10.0,
+          "offset": 273.15,
+          "evidence": "int16 rasters with median ~3008 and max ~4714. Dividing by 10 and subtracting 273.15 reproduces the release's own Celsius product to within the error expected from orthorectification (max 198.3 vs 197.0 C; median 27.7 vs 29.7 C). Cross-checked per frame by build_curated_dataset.py, which records the measured agreement.",
+          "formula": "celsius = raw / 10.0 - 273.15",
+          "inverse_formula": "raw = (celsius + 273.15) * 10.0"
+        },
+        "verbatim_ext": [],
+        "layout": "flame3_canonical",
+        "notes": "Restructured into plot/phase/modality, because plot is the correlated unit that must not cross a split and phase carries the label signal. The provenance table maps every curated file back to its raw path and hash."
+      }
+    }
+  },
+  "recipe_hash": "fde644e297e43f29c2dbf240b7f81431dbb94f46c5f614176255a2d9f6e5a7b6"
+}
