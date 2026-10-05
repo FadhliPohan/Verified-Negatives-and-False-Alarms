@@ -1,0 +1,37 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite it as below, together with the paper."
+type: software
+title: "Verified Negatives and False Alarms in Fire and Smoke Detection: A Cost-Sensitive Re-Evaluation on the D-Fire Benchmark"
+abstract: >-
+  Analysis notebook that reproduces every computed table and figure of the paper from the
+  frozen D-Fire split manifests and the stored detections of eight trained detectors, and
+  code to retrain the YOLO11n and ResNet18+FPN+FCOS detectors.
+authors:
+  - given-names: "Muhammad Fadhli"
+    family-names: "Dzil Ikram"
+    email: "09012682529009@student.unsri.ac.id"
+    orcid: "https://orcid.org/0009-0008-1748-8715"
+    affiliation: "Master of Computer Science, Faculty of Computer Science, Sriwijaya University, Palembang, Indonesia"
+  - family-names: "Samsuryadi"
+    affiliation: "Master of Computer Science, Faculty of Computer Science, Sriwijaya University, Palembang, Indonesia"
+repository-code: "https://github.com/FadhliPohan/Verified-Negatives-and-False-Alarms"
+url: "https://github.com/FadhliPohan/Verified-Negatives-and-False-Alarms"
+license: MIT
+date-released: "2026-10-05"
+keywords:
+  - fire and smoke detection
+  - false alarm rate
+  - verified negatives
+  - cost-sensitive evaluation
+  - D-Fire
+preferred-citation:
+  type: article
+  title: "Verified Negatives and False Alarms in Fire and Smoke Detection: A Cost-Sensitive Re-Evaluation on the D-Fire Benchmark"
+  authors:
+    - given-names: "Muhammad Fadhli"
+      family-names: "Dzil Ikram"
+      orcid: "https://orcid.org/0009-0008-1748-8715"
+    - family-names: "Samsuryadi"
+  journal: "Pattern Analysis and Applications"
+  year: 2026
+  status: submitted

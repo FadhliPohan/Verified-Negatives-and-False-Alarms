@@ -1,26 +1,33 @@
 # Stored predictions
 
-This folder is empty in the repository. The detections of the eight trained models are published separately at [ISI: Zenodo DOI] (about 660 MB) and belong here, one folder per run:
+This folder is empty in the repository. The detections of the trained models are archived on Zenodo, [ISI: Zenodo DOI], as `dfire_stored_predictions.zip`. Its entries are `predictions/<run>/<split>_dfire.jsonl`, so unzipping it **inside the repository's `data/` folder** fills this folder:
+
+```bash
+cd data
+unzip dfire_stored_predictions.zip      # Windows: tar -xf dfire_stored_predictions.zip
+```
+
+which gives
 
 ```
-data/predictions/<run_id>/val_dfire.jsonl
-data/predictions/<run_id>/test_dfire.jsonl
+data/predictions/<run>/val_dfire.jsonl
+data/predictions/<run>/test_dfire.jsonl
 ```
 
-Alternatively, leave them anywhere and set `FIRE_PRED_DIR` to the folder that holds the run folders.
+The notebook reads this layout directly. It needs the eight runs below; the archive also holds the runs of a companion study, which the notebook ignores. If the files live elsewhere, set `FIRE_PRED_DIR` to the folder that holds the run folders.
 
-| `run_id` | Detector | Seed | Training set | Folder name in the original project |
+| Folder in the archive | Run id in the notebook | Detector | Seed | Training set |
 |---|---|---|---|---|
-| `yolo11n_seed42` | YOLO11n | 42 | full | `yolo11n_seed42` |
-| `yolo11n_seed1337` | YOLO11n | 1337 | full | `yolo11n_seed1337` |
-| `yolo11n_seed2024` | YOLO11n | 2024 | full | `yolo11n_seed2024` |
-| `resnet18fpn_seed42` | ResNet18+FPN+FCOS | 42 | full | `resnet18fpn_seed42` |
-| `resnet18fpn_seed1337` | ResNet18+FPN+FCOS | 1337 | full | `resnet18fpn_seed1337` |
-| `resnet18fpn_seed2024` | ResNet18+FPN+FCOS | 2024 | full | `resnet18fpn_seed2024` |
-| `no_negatives_seed42` | ResNet18+FPN+FCOS | 42 | positives only (7,938 images) | `tanpa_negatif_seed42` |
-| `size_matched_seed42` | ResNet18+FPN+FCOS | 42 | 4,243 positives + 3,695 negatives | `kontrol_ukuran_seed42` |
+| `yolo11n_seed42` | `yolo11n_seed42` | YOLO11n | 42 | full |
+| `yolo11n_seed1337` | `yolo11n_seed1337` | YOLO11n | 1337 | full |
+| `yolo11n_seed2024` | `yolo11n_seed2024` | YOLO11n | 2024 | full |
+| `resnet18fpn_seed42` | `resnet18fpn_seed42` | ResNet18+FPN+FCOS | 42 | full |
+| `resnet18fpn_seed1337` | `resnet18fpn_seed1337` | ResNet18+FPN+FCOS | 1337 | full |
+| `resnet18fpn_seed2024` | `resnet18fpn_seed2024` | ResNet18+FPN+FCOS | 2024 | full |
+| `tanpa_negatif_seed42` | `no_negatives_seed42` | ResNet18+FPN+FCOS | 42 | positives only (7,938 images) |
+| `kontrol_ukuran_seed42` | `size_matched_seed42` | ResNet18+FPN+FCOS | 42 | 4,243 positives + 3,695 negatives |
 
-The notebook accepts either name, and also the original layout `<folder>/prediksi/<split>_dfire.jsonl`.
+Folders named after the run ids of the notebook are accepted as well.
 
 ## File format
 
@@ -39,6 +46,8 @@ JSON lines, UTF-8. The first line may be a metadata record; every other line des
 
 ## Checksums
 
+SHA-256 of each file as it appears under `data/predictions/` after unzipping.
+
 | File | Bytes | SHA-256 |
 |---|---:|---|
 | `yolo11n_seed42/val_dfire.jsonl` | 1,059,005 | `6d9972f11e236f95a800192472c8b594790610896dc4c031d27ab1fa787703da` |
@@ -53,7 +62,7 @@ JSON lines, UTF-8. The first line may be a metadata record; every other line des
 | `resnet18fpn_seed1337/test_dfire.jsonl` | 44,960,344 | `fb8f90e4fe595ffee781dcecd483b0e5754a5e1c4449f93d0176976bd458daec` |
 | `resnet18fpn_seed2024/val_dfire.jsonl` | 50,604,604 | `f9e0a3d07bafc167fbe103aec847db4f4f96e85795cd33922143cd9a7c3c4e7c` |
 | `resnet18fpn_seed2024/test_dfire.jsonl` | 47,389,700 | `88e09fd62381e5bfa66a5455e7392dead6d7c8b9563b34008dccc3f5d98dfb22` |
-| `no_negatives_seed42/val_dfire.jsonl` | 83,651,104 | `8c77804e091ea9a94b0df56c528d475d63113c6116d74392eb3660da0cb3027c` |
-| `no_negatives_seed42/test_dfire.jsonl` | 78,652,478 | `b04281d073c4c2ca27d5a90e179642b36c14f61b45076fbce8f006ec4a59d9e9` |
-| `size_matched_seed42/val_dfire.jsonl` | 83,571,314 | `96047121311fe088ff00f5e21ce1f866c823aaf9e4eab65fa3f11e525b2d2863` |
-| `size_matched_seed42/test_dfire.jsonl` | 78,667,210 | `1c7339eec94814af3f2a57f47d5ae62a4cd3e8e1d04ada5566050ae04d144919` |
+| `tanpa_negatif_seed42/val_dfire.jsonl` | 83,651,104 | `8c77804e091ea9a94b0df56c528d475d63113c6116d74392eb3660da0cb3027c` |
+| `tanpa_negatif_seed42/test_dfire.jsonl` | 78,652,478 | `b04281d073c4c2ca27d5a90e179642b36c14f61b45076fbce8f006ec4a59d9e9` |
+| `kontrol_ukuran_seed42/val_dfire.jsonl` | 83,571,314 | `96047121311fe088ff00f5e21ce1f866c823aaf9e4eab65fa3f11e525b2d2863` |
+| `kontrol_ukuran_seed42/test_dfire.jsonl` | 78,667,210 | `1c7339eec94814af3f2a57f47d5ae62a4cd3e8e1d04ada5566050ae04d144919` |
