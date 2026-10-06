@@ -1,6 +1,6 @@
 # Verified Negatives and False Alarms in Fire and Smoke Detection: A Cost-Sensitive Re-Evaluation on the D-Fire Benchmark
 
-**Muhammad Fadhli Dzil Ikram** ([ORCID 0009-0008-1748-8715](https://orcid.org/0009-0008-1748-8715), corresponding author, 09012682529009@student.unsri.ac.id) and **Samsuryadi**
+**Muhammad Fadhli Dzil Ikram Pohan** ([ORCID 0009-0008-1748-8715](https://orcid.org/0009-0008-1748-8715), corresponding author, muhammadfadly.mfd@gmail.com) and **Samsuryadi**
 Master of Computer Science, Faculty of Computer Science, Sriwijaya University, Palembang, Indonesia
 
 Repository: <https://github.com/FadhliPohan/Verified-Negatives-and-False-Alarms>
@@ -42,7 +42,7 @@ The training appendix additionally needs PyTorch, torchvision, timm, Ultralytics
 
 **Manifests.** Included in `data/manifests/`. The notebook verifies that the test manifest is the frozen one (content hash `6246e1bcca79...`) before computing anything.
 
-**Stored predictions (required).** The detections that the trained models wrote on the validation and test splits are archived on Zenodo, [ISI: Zenodo DOI], as a single file, `dfire_stored_predictions.zip` (about 660 MB of JSON lines for the runs of this paper). The archive's entries are `predictions/<run>/<split>_dfire.jsonl`, one folder per run under the run's stored folder name. Download it and unzip it **inside the repository's `data/` folder**:
+**Stored predictions (required).** The detections that the trained models wrote on the validation and test splits are archived on Zenodo, https://doi.org/10.5281/zenodo.23166787, as a single file, `dfire_stored_predictions.zip` (about 660 MB of JSON lines for the runs of this paper). The archive's entries are `predictions/<run>/<split>_dfire.jsonl`, one folder per run under the run's stored folder name. Download it and unzip it **inside the repository's `data/` folder**:
 
 ```bash
 cd data
@@ -137,11 +137,11 @@ Further intermediate tables (per-run metrics, threshold selection, full false-al
 
 The paper:
 
-> Dzil Ikram, M. F., & Samsuryadi (2026). Verified Negatives and False Alarms in Fire and Smoke Detection: A Cost-Sensitive Re-Evaluation on the D-Fire Benchmark. Manuscript submitted to *Pattern Analysis and Applications*. [ISI: DOI of the paper once published]
+> Pohan, M. F. D. I., & Samsuryadi (2026). Verified Negatives and False Alarms in Fire and Smoke Detection: A Cost-Sensitive Re-Evaluation on the D-Fire Benchmark. Manuscript submitted to *Pattern Analysis and Applications*. [ISI: DOI of the paper once published]
 
 ```bibtex
 @unpublished{dzilikram2026verified,
-  author = {Dzil Ikram, Muhammad Fadhli and Samsuryadi},
+  author = {Pohan, Muhammad Fadhli Dzil Ikram and Samsuryadi},
   title  = {Verified Negatives and False Alarms in Fire and Smoke Detection:
             A Cost-Sensitive Re-Evaluation on the {D-Fire} Benchmark},
   note   = {Manuscript submitted to Pattern Analysis and Applications. [ISI: DOI of the paper once published]},
@@ -151,11 +151,11 @@ The paper:
 
 The code (this repository; machine-readable metadata in `CITATION.cff`):
 
-> Dzil Ikram, M. F., & Samsuryadi (2026). *Verified Negatives and False Alarms in Fire and Smoke Detection: code and analysis notebook* [Computer software]. https://github.com/FadhliPohan/Verified-Negatives-and-False-Alarms
+> Pohan, M. F. D. I., & Samsuryadi (2026). *Verified Negatives and False Alarms in Fire and Smoke Detection: code and analysis notebook* [Computer software]. https://github.com/FadhliPohan/Verified-Negatives-and-False-Alarms
 
 The stored predictions:
 
-> Dzil Ikram, M. F., & Samsuryadi (2026). *Stored detections of the D-Fire fire and smoke detectors* (`dfire_stored_predictions.zip`) [Data set]. Zenodo. [ISI: Zenodo DOI]
+> Pohan, M. F. D. I., & Samsuryadi (2026). *Stored detector predictions on the D-Fire benchmark* [Data set]. Zenodo. https://doi.org/10.5281/zenodo.23166787
 
 Please also cite the D-Fire dataset as its authors ask (see <https://github.com/gaiasd/DFireDataset>).
 

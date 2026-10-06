@@ -1,6 +1,6 @@
 # Stored predictions
 
-This folder is empty in the repository. The detections of the trained models are archived on Zenodo, [ISI: Zenodo DOI], as `dfire_stored_predictions.zip`. Its entries are `predictions/<run>/<split>_dfire.jsonl`, so unzipping it **inside the repository's `data/` folder** fills this folder:
+This folder is empty in the repository. The detections of the trained models are archived on Zenodo, https://doi.org/10.5281/zenodo.23166787, as `dfire_stored_predictions.zip`. Its entries are `predictions/<run>/<split>_dfire.jsonl`, so unzipping it **inside the repository's `data/` folder** fills this folder:
 
 ```bash
 cd data
