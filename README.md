@@ -5,7 +5,7 @@ Master of Computer Science, Faculty of Computer Science, Sriwijaya University, P
 
 Repository: <https://github.com/FadhliPohan/Verified-Negatives-and-False-Alarms>
 
-Code and data for the paper of the same title, submitted to *Pattern Analysis and Applications* (Springer).
+Code and data for the paper of the same title (manuscript submitted for publication).
 
 The paper asks what a single mAP50 score leaves out when a fire and smoke detector is used as an alarm. D-Fire contains 9,838 images that a person has verified to contain neither fire nor smoke, so the alarm rate on fire-free scenes can be measured rather than guessed. On a frozen test split, with three seeds per model, YOLO11n has the higher mAP50 (0.7114 against 0.6646 for a ResNet18+FPN+FCOS detector) but raises 3.5 times as many false alarms, and under an expected-cost model the ranking of the two detectors reverses at every miss-to-false-alarm cost ratio from 1 to 50. A three-condition ablation shows that removing the verified negatives from training leaves mAP50 within seed noise while multiplying the alarm rate by 48.8.
 
@@ -137,14 +137,14 @@ Further intermediate tables (per-run metrics, threshold selection, full false-al
 
 The paper:
 
-> Pohan, M. F. D. I., & Samsuryadi (2026). Verified Negatives and False Alarms in Fire and Smoke Detection: A Cost-Sensitive Re-Evaluation on the D-Fire Benchmark. Manuscript submitted to *Pattern Analysis and Applications*. [ISI: DOI of the paper once published]
+> Pohan, M. F. D. I., & Samsuryadi (2026). Verified Negatives and False Alarms in Fire and Smoke Detection: A Cost-Sensitive Re-Evaluation on the D-Fire Benchmark. Manuscript submitted for publication. [ISI: DOI of the paper once published]
 
 ```bibtex
 @unpublished{dzilikram2026verified,
   author = {Pohan, Muhammad Fadhli Dzil Ikram and Samsuryadi},
   title  = {Verified Negatives and False Alarms in Fire and Smoke Detection:
             A Cost-Sensitive Re-Evaluation on the {D-Fire} Benchmark},
-  note   = {Manuscript submitted to Pattern Analysis and Applications. [ISI: DOI of the paper once published]},
+  note   = {Manuscript submitted for publication. [ISI: DOI of the paper once published]},
   year   = {2026}
 }
 ```
